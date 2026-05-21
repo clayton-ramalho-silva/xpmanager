@@ -1,0 +1,5 @@
+{
+  "name": "XP Task Manager",
+  "description": "Gerenciador de tarefas baseado em XP (Extreme Programming) com Backlog, User Stories e Kanban.",
+  "requestFramePermissions": []
+}
