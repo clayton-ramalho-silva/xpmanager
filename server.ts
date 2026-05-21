@@ -7,11 +7,18 @@ import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const db = new Database('xp_manager.db');
+const dbPath = process.env.NODE_ENV === 'production'
+  ? path.resolve(__dirname, '..', 'xp_manager.db')
+  : path.resolve(__dirname, 'xp_manager.db');
+
+const db = new Database(dbPath);
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key';
 
 // Initialize Database
