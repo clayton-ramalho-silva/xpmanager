@@ -24,12 +24,6 @@ export default defineConfig(({mode}) => {
               if (id.includes('jspdf') || id.includes('jspdf-autotable')) {
                 return 'vendor-pdf';
               }
-              if (id.includes('react') || id.includes('react-dom')) {
-                return 'vendor-react';
-              }
-              if (id.includes('@dnd-kit') || id.includes('motion')) {
-                return 'vendor-ui-libs';
-              }
               return 'vendor';
             }
           },
